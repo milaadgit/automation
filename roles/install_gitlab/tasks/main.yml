@@ -1,0 +1,14 @@
+---
+- name: Update Packages
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Dependencies
+  ansible.builtin.apt:
+    name:
+      - curl
+      - openssh-server
+      - ca-certificates
+      - tzdata
+      - perl
+    state: present
